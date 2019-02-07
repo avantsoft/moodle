@@ -3239,6 +3239,24 @@ class core_course_external extends external_api {
                     'value' => $value
                 );
             }
+
+            // Start Open Wellness
+            // Passing the tags as comma separated string in coursedata
+            $tagsArray = core_tag_tag::get_item_tags_array('core', 'course', $course->id);
+            $tagsStr = '';
+
+            foreach ($tagsArray as $tag) {
+                if (strlen($tagsStr)) {
+                    $tagsStr = $tagStr . ',' . $tag;
+                } else {
+                    $tagStr = $tagsStr . $tag;
+                }
+            }
+
+            // TODO: Check if we can pass our new field "tags" in coursedata 
+            // so that we can stop using "summary" field
+            $coursesdata[$course->id]['summary'] = $tagsStr;
+            // End Open Wellness
         }
 
         return array(
