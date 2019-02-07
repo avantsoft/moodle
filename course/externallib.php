@@ -401,6 +401,11 @@ class core_course_external extends external_api {
                     'name' => new external_value(PARAM_TEXT, 'Section name'),
                     'visible' => new external_value(PARAM_INT, 'is the section visible', VALUE_OPTIONAL),
                     'summary' => new external_value(PARAM_RAW, 'Section description'),
+
+                    // Start Open Wellness
+                    'tags' => new external_value(PARAM_RAW, 'Course Tags'),
+                    // End Open Wellness
+
                     'summaryformat' => new external_format_value('summary'),
                     'section' => new external_value(PARAM_INT, 'Section number inside the course', VALUE_OPTIONAL),
                     'hiddenbynumsections' => new external_value(PARAM_INT, 'Whether is a section hidden in the course format',
@@ -545,6 +550,11 @@ class core_course_external extends external_api {
             $courseinfo['categoryid'] = $course->category;
             list($courseinfo['summary'], $courseinfo['summaryformat']) =
                 external_format_text($course->summary, $course->summaryformat, $context->id, 'course', 'summary', 0);
+
+            // Start Open Wellness
+            $courseinfo['tags'] = $course->tags;
+            // End Open Wellness
+
             $courseinfo['format'] = $course->format;
             $courseinfo['startdate'] = $course->startdate;
             $courseinfo['enddate'] = $course->enddate;
@@ -615,6 +625,11 @@ class core_course_external extends external_api {
                             'displayname' => new external_value(PARAM_TEXT, 'course display name'),
                             'idnumber' => new external_value(PARAM_RAW, 'id number', VALUE_OPTIONAL),
                             'summary' => new external_value(PARAM_RAW, 'summary'),
+
+                            // Start Open Wellness
+                            'tags' => new external_value(PARAM_RAW, 'tags'),
+                            // End Open Wellness
+
                             'summaryformat' => new external_format_value('summary'),
                             'format' => new external_value(PARAM_PLUGIN,
                                     'course format: weeks, topics, social, site,..'),
@@ -2363,6 +2378,11 @@ class core_course_external extends external_api {
         $coursereturns['categoryid']        = $course->category;
         $coursereturns['categoryname']      = $categoryname;
         $coursereturns['summary']           = $summary;
+
+        // Start Open Wellness
+        $coursereturns['tags']              = '';
+        // End Open Wellness
+
         $coursereturns['summaryformat']     = $summaryformat;
         $coursereturns['summaryfiles']      = external_util::get_area_files($coursecontext->id, 'course', 'summary', false, false);
         $coursereturns['overviewfiles']     = $files;
@@ -2483,6 +2503,11 @@ class core_course_external extends external_api {
             'categoryname' => new external_value(PARAM_TEXT, 'category name'),
             'sortorder' => new external_value(PARAM_INT, 'Sort order in the category', VALUE_OPTIONAL),
             'summary' => new external_value(PARAM_RAW, 'summary'),
+
+            // Start Open Wellness
+            'tags' => new external_value(PARAM_RAW, 'tags'),
+            // End Open Wellness
+
             'summaryformat' => new external_format_value('summary'),
             'summaryfiles' => new external_files('summary files in the summary field', VALUE_OPTIONAL),
             'overviewfiles' => new external_files('additional overview files attached to this course'),
@@ -3144,10 +3169,13 @@ class core_course_external extends external_api {
             } catch (Exception $e) {
                 continue;
             }
+
+            // Start Open Wellness
             // Return information for any user that can access the course.
             $coursefields = array('format', 'showgrades', 'newsitems', 'startdate', 'enddate', 'maxbytes', 'showreports', 'visible',
-                'groupmode', 'groupmodeforce', 'defaultgroupingid', 'enablecompletion', 'completionnotify', 'lang', 'theme',
+                'groupmode', 'groupmodeforce', 'defaultgroupingid', 'enablecompletion', 'completionnotify', 'lang', 'theme', 'tags', 
                 'marker');
+            // End Open Wellness
 
             // Course filters.
             $coursesdata[$course->id]['filters'] = filter_get_available_in_context($context);
@@ -3187,15 +3215,13 @@ class core_course_external extends external_api {
 
             foreach ($tagsArray as $tag) {
                 if (strlen($tagsStr)) {
-                    $tagsStr = $tagStr . ',' . $tag;
+                    $tagsStr = $tagsStr . ',' . $tag;
                 } else {
-                    $tagStr = $tagsStr . $tag;
+                    $tagsStr = $tagsStr . $tag;
                 }
             }
 
-            // TODO: Check if we can pass our new field "tags" in coursedata 
-            // so that we can stop using "summary" field
-            $coursesdata[$course->id]['summary'] = $tagsStr;
+            $coursesdata[$course->id]['tags'] = $tagsStr;
             // End Open Wellness
         }
 
