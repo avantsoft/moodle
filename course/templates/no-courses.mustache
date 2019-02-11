@@ -15,17 +15,19 @@
     along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 }}
 {{!
-    @template block_recentlyaccessedcourses/placeholder-course
+    @template core_course/no-courses
 
-    This template renders an course card item loading placeholder for the recentlyaccessedcourses block.
+    This template renders the no courses message.
 
     Example context (json):
-    {}
+    {
+        "nocoursesimgurl": "https://moodlesite/theme/image.php/boost/block_recentlyaccessedcourses/1535727318/courses"
+    }
 }}
-<div class="card dashboard-card border-0">
-    <div class="card-img-top bg-pulse-grey w-100" style="height: 7rem">
-    </div>
-    <div class="card-body pr-1 course-info-container">
-        <div class="bg-pulse-grey w-100" style="height: 1rem"></div>
-    </div>
+<div class="text-xs-center text-center m-t-3" data-region="empty-message">
+    <img class="empty-placeholder-image-lg m-t-1"
+         src="{{nocoursesimg}}"
+         alt="{{$nocoursestring}}{{#str}} nocourses, core {{/str}}{{/nocoursestring}}"
+         role="presentation">
+    <p class="text-muted mt-3">{{$nocoursestring}}{{#str}} nocourses, core {{/str}}{{/nocoursestring}}</p>
 </div>
