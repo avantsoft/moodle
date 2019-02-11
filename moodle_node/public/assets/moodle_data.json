@@ -1,0 +1,401 @@
+{
+    "courses": [{
+        "id": 1,
+        "fullname": "Wellnezz",
+        "displayname": "Wellnezz",
+        "shortname": "Wellnezz",
+        "categoryid": 0,
+        "categoryname": "",
+        "sortorder": 1,
+        "summary": "",
+        "summaryformat": 1,
+        "summaryfiles": [],
+        "overviewfiles": [],
+        "contacts": [],
+        "enrollmentmethods": [],
+        "format": "site",
+        "showgrades": 1,
+        "newsitems": 3,
+        "startdate": 0,
+        "enddate": 0,
+        "maxbytes": 0,
+        "showreports": 0,
+        "visible": 1,
+        "groupmode": 0,
+        "groupmodeforce": 0,
+        "defaultgroupingid": 0,
+        "enablecompletion": 0,
+        "completionnotify": 0,
+        "lang": "",
+        "theme": "",
+        "marker": 0,
+        "filters": [{
+            "filter": "mathjaxloader",
+            "localstate": 0,
+            "inheritedstate": 1
+        }, {
+            "filter": "activitynames",
+            "localstate": 0,
+            "inheritedstate": 1
+        }, {
+            "filter": "mediaplugin",
+            "localstate": 0,
+            "inheritedstate": 1
+        }]
+    }, {
+        "id": 44,
+        "fullname": "Mindful Breathing",
+        "displayname": "Mindful Breathing",
+        "shortname": "practice_MB",
+        "categoryid": 8,
+        "categoryname": "Mindfulness",
+        "sortorder": 30001,
+        "summary": "<p><b>Mindfulness<\/b>\u00a0is a type of meditation in which you focus on being intensely aware of what you're sensing and feeling in the moment, without interpretation or judgment. Practicing\u00a0<b>mindfulness<\/b>\u00a0involves breathing methods, guided imagery, and other practices to relax the body and mind and help reduce stress.<br \/><\/p>",
+        "summaryformat": 1,
+        "summaryfiles": [],
+        "overviewfiles": [{
+            "filename": "mb.jpg",
+            "filepath": "\/",
+            "filesize": 25698,
+            "fileurl": "https:\/\/openwellness.avantsoft.com\/webservice\/pluginfile.php\/410\/course\/overviewfiles\/mb.jpg",
+            "timemodified": 1546241801,
+            "mimetype": "image\/jpeg"
+        }],
+        "contacts": [{
+            "id": 12,
+            "fullname": "GGIA Trainer"
+        }],
+        "enrollmentmethods": ["manual"],
+        "format": "topics",
+        "showgrades": 1,
+        "newsitems": 5,
+        "startdate": 1546473600,
+        "enddate": 0,
+        "maxbytes": 0,
+        "showreports": 0,
+        "visible": 1,
+        "groupmode": 0,
+        "groupmodeforce": 0,
+        "defaultgroupingid": 0,
+        "enablecompletion": 1,
+        "completionnotify": 0,
+        "lang": "",
+        "theme": "",
+        "marker": 0,
+        "filters": [{
+            "filter": "mathjaxloader",
+            "localstate": 0,
+            "inheritedstate": 1
+        }, {
+            "filter": "activitynames",
+            "localstate": 0,
+            "inheritedstate": 1
+        }, {
+            "filter": "mediaplugin",
+            "localstate": 0,
+            "inheritedstate": 1
+        }],
+        "courseformatoptions": [{
+            "name": "hiddensections",
+            "value": 0
+        }, {
+            "name": "coursedisplay",
+            "value": 0
+        }]
+    }, {
+        "id": 49,
+        "fullname": "Nine Steps To Forgiveness",
+        "displayname": "Nine Steps To Forgiveness",
+        "shortname": "practice_NSTF",
+        "categoryid": 15,
+        "categoryname": "Wellness Institute",
+        "sortorder": 10002,
+        "summary": "<p><b>Mindfulness<\/b>\u00a0is a type of meditation in which you focus on being intensely aware of what you're sensing and feeling in the moment, without interpretation or judgment. Practicing\u00a0<b>mindfulness<\/b>\u00a0involves breathing methods, guided imagery, and other practices to relax the body and mind and help reduce stress.<br \/><\/p>",
+        "summaryformat": 1,
+        "summaryfiles": [],
+        "overviewfiles": [{
+            "filename": "1.jpg",
+            "filepath": "\/",
+            "filesize": 13641,
+            "fileurl": "https:\/\/openwellness.avantsoft.com\/webservice\/pluginfile.php\/464\/course\/overviewfiles\/1.jpg",
+            "timemodified": 1547022141,
+            "mimetype": "image\/jpeg"
+        }],
+        "contacts": [{
+            "id": 17,
+            "fullname": "Wellness Creator"
+        }, {
+            "id": 18,
+            "fullname": "Wellness Trainer"
+        }],
+        "enrollmentmethods": ["manual"],
+        "format": "topics",
+        "showgrades": 1,
+        "newsitems": 0,
+        "startdate": 1547078400,
+        "enddate": 0,
+        "maxbytes": 0,
+        "showreports": 0,
+        "visible": 1,
+        "groupmode": 0,
+        "groupmodeforce": 0,
+        "defaultgroupingid": 0,
+        "enablecompletion": 1,
+        "completionnotify": 0,
+        "lang": "",
+        "theme": "",
+        "marker": 0,
+        "filters": [{
+            "filter": "mathjaxloader",
+            "localstate": 0,
+            "inheritedstate": 1
+        }, {
+            "filter": "activitynames",
+            "localstate": 0,
+            "inheritedstate": 1
+        }, {
+            "filter": "mediaplugin",
+            "localstate": 0,
+            "inheritedstate": 1
+        }],
+        "courseformatoptions": [{
+            "name": "hiddensections",
+            "value": 0
+        }, {
+            "name": "coursedisplay",
+            "value": 0
+        }]
+    }, {
+        "id": 57,
+        "fullname": "Mind Matters - ICC Wellness",
+        "displayname": "Mind Matters - ICC Wellness",
+        "shortname": "IW",
+        "categoryid": 15,
+        "categoryname": "Wellness Institute",
+        "sortorder": 10001,
+        "summary": "",
+        "summaryformat": 1,
+        "summaryfiles": [],
+        "overviewfiles": [{
+            "filename": "Screen Shot 2019-02-07 at 3.54.10 PM.png",
+            "filepath": "\/",
+            "filesize": 44230,
+            "fileurl": "https:\/\/openwellness.avantsoft.com\/webservice\/pluginfile.php\/613\/course\/overviewfiles\/Screen%20Shot%202019-02-07%20at%203.54.10%20PM.png",
+            "timemodified": 1549535958,
+            "mimetype": "image\/png"
+        }],
+        "contacts": [{
+            "id": 17,
+            "fullname": "Wellness Creator"
+        }],
+        "enrollmentmethods": ["manual"],
+        "format": "topics",
+        "showgrades": 1,
+        "newsitems": 5,
+        "startdate": 1549526400,
+        "enddate": 1581062400,
+        "maxbytes": 0,
+        "showreports": 0,
+        "visible": 1,
+        "groupmode": 0,
+        "groupmodeforce": 0,
+        "defaultgroupingid": 0,
+        "enablecompletion": 1,
+        "completionnotify": 0,
+        "lang": "",
+        "theme": "",
+        "marker": 0,
+        "filters": [{
+            "filter": "mathjaxloader",
+            "localstate": 0,
+            "inheritedstate": 1
+        }, {
+            "filter": "activitynames",
+            "localstate": 0,
+            "inheritedstate": 1
+        }, {
+            "filter": "mediaplugin",
+            "localstate": 0,
+            "inheritedstate": 1
+        }],
+        "courseformatoptions": [{
+            "name": "hiddensections",
+            "value": 0
+        }, {
+            "name": "coursedisplay",
+            "value": 0
+        }]
+    }, {
+        "id": 58,
+        "fullname": "Happiness Circle",
+        "displayname": "Happiness Circle",
+        "shortname": "circle_HC",
+        "categoryid": 15,
+        "categoryname": "Wellness Institute",
+        "sortorder": 10007,
+        "summary": "",
+        "summaryformat": 1,
+        "summaryfiles": [],
+        "overviewfiles": [{
+            "filename": "Screen Shot 2019-02-07 at 4.26.22 PM.png",
+            "filepath": "\/",
+            "filesize": 137010,
+            "fileurl": "https:\/\/openwellness.avantsoft.com\/webservice\/pluginfile.php\/645\/course\/overviewfiles\/Screen%20Shot%202019-02-07%20at%204.26.22%20PM.png",
+            "timemodified": 1549537021,
+            "mimetype": "image\/png"
+        }],
+        "contacts": [],
+        "enrollmentmethods": ["manual"],
+        "format": "topics",
+        "showgrades": 1,
+        "newsitems": 5,
+        "startdate": 1549526400,
+        "enddate": 0,
+        "maxbytes": 0,
+        "showreports": 0,
+        "visible": 1,
+        "groupmode": 0,
+        "groupmodeforce": 0,
+        "defaultgroupingid": 0,
+        "enablecompletion": 1,
+        "completionnotify": 0,
+        "lang": "",
+        "theme": "",
+        "marker": 0,
+        "filters": [{
+            "filter": "mathjaxloader",
+            "localstate": 0,
+            "inheritedstate": 1
+        }, {
+            "filter": "activitynames",
+            "localstate": 0,
+            "inheritedstate": 1
+        }, {
+            "filter": "mediaplugin",
+            "localstate": 0,
+            "inheritedstate": 1
+        }],
+        "courseformatoptions": [{
+            "name": "hiddensections",
+            "value": 0
+        }, {
+            "name": "coursedisplay",
+            "value": 0
+        }]
+    }, {
+        "id": 59,
+        "fullname": "Mindfulness Circle",
+        "displayname": "Mindfulness Circle",
+        "shortname": "circle_MC",
+        "categoryid": 15,
+        "categoryname": "Wellness Institute",
+        "sortorder": 10006,
+        "summary": "",
+        "summaryformat": 1,
+        "summaryfiles": [],
+        "overviewfiles": [{
+            "filename": "mindfullness_circle.png",
+            "filepath": "\/",
+            "filesize": 5874,
+            "fileurl": "https:\/\/openwellness.avantsoft.com\/webservice\/pluginfile.php\/649\/course\/overviewfiles\/mindfullness_circle.png",
+            "timemodified": 1549538308,
+            "mimetype": "image\/png"
+        }],
+        "contacts": [],
+        "enrollmentmethods": ["manual"],
+        "format": "topics",
+        "showgrades": 1,
+        "newsitems": 5,
+        "startdate": 1549526400,
+        "enddate": 0,
+        "maxbytes": 0,
+        "showreports": 0,
+        "visible": 1,
+        "groupmode": 0,
+        "groupmodeforce": 0,
+        "defaultgroupingid": 0,
+        "enablecompletion": 1,
+        "completionnotify": 0,
+        "lang": "",
+        "theme": "",
+        "marker": 0,
+        "filters": [{
+            "filter": "mathjaxloader",
+            "localstate": 0,
+            "inheritedstate": 1
+        }, {
+            "filter": "activitynames",
+            "localstate": 0,
+            "inheritedstate": 1
+        }, {
+            "filter": "mediaplugin",
+            "localstate": 0,
+            "inheritedstate": 1
+        }],
+        "courseformatoptions": [{
+            "name": "hiddensections",
+            "value": 0
+        }, {
+            "name": "coursedisplay",
+            "value": 0
+        }]
+    }, {
+        "id": 60,
+        "fullname": "Wellness Book Circle",
+        "displayname": "Wellness Book Circle",
+        "shortname": "circle_WBC",
+        "categoryid": 15,
+        "categoryname": "Wellness Institute",
+        "sortorder": 10005,
+        "summary": "",
+        "summaryformat": 1,
+        "summaryfiles": [],
+        "overviewfiles": [{
+            "filename": "book_circle.jpg",
+            "filepath": "\/",
+            "filesize": 85306,
+            "fileurl": "https:\/\/openwellness.avantsoft.com\/webservice\/pluginfile.php\/652\/course\/overviewfiles\/book_circle.jpg",
+            "timemodified": 1549538778,
+            "mimetype": "image\/jpeg"
+        }],
+        "contacts": [],
+        "enrollmentmethods": ["manual"],
+        "format": "topics",
+        "showgrades": 1,
+        "newsitems": 5,
+        "startdate": 1549526400,
+        "enddate": 0,
+        "maxbytes": 0,
+        "showreports": 0,
+        "visible": 1,
+        "groupmode": 0,
+        "groupmodeforce": 0,
+        "defaultgroupingid": 0,
+        "enablecompletion": 0,
+        "completionnotify": 0,
+        "lang": "",
+        "theme": "",
+        "marker": 0,
+        "filters": [{
+            "filter": "mathjaxloader",
+            "localstate": 0,
+            "inheritedstate": 1
+        }, {
+            "filter": "activitynames",
+            "localstate": 0,
+            "inheritedstate": 1
+        }, {
+            "filter": "mediaplugin",
+            "localstate": 0,
+            "inheritedstate": 1
+        }],
+        "courseformatoptions": [{
+            "name": "hiddensections",
+            "value": 0
+        }, {
+            "name": "coursedisplay",
+            "value": 0
+        }]
+    }],
+    "warnings": []
+}
