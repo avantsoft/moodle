@@ -41,7 +41,7 @@ var db = mysql.createConnection ({
     port: '8889',
     user: 'root',
     password: 'root',
-    database: 'moodle'
+    database: 'moodle36'
 });
 
 // connect to database

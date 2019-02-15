@@ -15,4 +15,8 @@ router.get('/moodleusers', function(req, res, next) {
     return moodle.getSQLdb(req, res);
 });
 
+router.post('/wellnezz/updatecoursesign', function(req, res) {
+    return moodle.updateCourseSign(req, res);
+});
+
 module.exports = router;
