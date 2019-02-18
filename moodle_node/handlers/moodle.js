@@ -42,16 +42,16 @@ module.exports = {
         var insertQuery = "INSERT INTO mdl_course_sign (courseid, sign, userId) VALUES(" + courseId + ", " + sign + ", " + userid + ")";
         var db = global.db;
 
-        var updateQuery = "UPDATE mdl_course_sign SET sign = " + sign +" WHERE courseId = " + courseId + " AND userId=" + userid;
+        var updateQuery = "UPDATE mdl_course_sign SET sign = " + sign + " WHERE courseId = " + courseId + " AND userId=" + userid;
 
         db.query(findQuery, function (err, result) {
-            if(result.length) {
+            if (result.length) {
                 db.query(updateQuery, function (err, result) {
-                    res.send(result);
+                    res.send(err ? err : data);
                 });
             } else {
                 db.query(insertQuery, function (err, result) {
-                    res.send(result);
+                    res.send(err ? err : data);
                 });
             }
         });
@@ -66,7 +66,7 @@ module.exports = {
         var startdate = data.startdate;
         var enddate = data.enddate;
 
-        if (!(fullname || shortname || summary)) {
+        if (!(fullname && shortname && summary)) {
             return res.status(400).send({
                 message: 'fullname, shortname & summary are required.'
             });
@@ -79,33 +79,33 @@ module.exports = {
 
         var addCourseQuery = "INSERT INTO mdl_course (category, sortorder, fullname, shortname, idnumber, summary, summaryformat, format, showgrades, newsitems, startdate, enddate, marker, maxbytes, legacyfiles, showreports, visible, visibleold, groupmode, groupmodeforce, defaultgroupingid, lang, calendartype, theme, timecreated, timemodified, requested, enablecompletion, completionnotify, cacherev) VALUES (3, 10001, '" + fullname + "', '" + shortname + "', '" + idnumber + "', '" + summary + "', 1, 'topics', 1, 5, " + startdate + ", " + enddate + ", 0, 0, 0, 0, 1, 1, 0, 0, 0, '', '', '', " + new Date().getTime() + ", 0, 0, 1, 0, 1546607956)";
 
-        var courseFindQuery = "SELECT * FROM mdl_course WHERE shortname='" + shortname + "'";
+        var courseFindQuery = "SELECT * FROM mdl_course WHERE shortname='" + shortname + "' AND fullname='" + fullname + "'";
 
         var db = global.db;
 
-        db.query(courseFindQuery, function(err, course){
-            if(!result.length) {
+        db.query(courseFindQuery, function (err, course) {
+            if (!course.length) {
                 db.query(addCourseQuery, function (err, result) {
-                    if(result) {
-                        db.query(courseFindQuery, function(err, course){
-                            if(course.length) {
+                    if (result) {
+                        db.query(courseFindQuery, function (err, course) {
+                            if (course.length) {
                                 courseId = course[0].id;
-                                var insertCourseFormatQuery = "INSERT INTO mdl_course_format_options (courseid, format, sectionid, name, value) VALUES("+ courseId +", 'topics', 0, 'coursedisplay', '0')";
-        
+                                var insertCourseFormatQuery = "INSERT INTO mdl_course_format_options (courseid, format, sectionid, name, value) VALUES(" + courseId + ", 'topics', 0, 'coursedisplay', '0')";
+
                                 var enrollUserQuery = "INSERT INTO mdl_enrol (enrol, status, courseid, sortorder, name, enrolperiod, enrolstartdate, enrolenddate, expirynotify, expirythreshold, notifyall, password, cost, currency, roleid, customint1, customint2, customint3, customint4, customint5, customint6, customint7, customint8, customchar1, customchar2, customchar3, customdec1, customdec2, customtext1, customtext2, customtext3, customtext4, timecreated, timemodified) VALUES('guest', 1, " + courseId + ", 1, NULL, 0, 0, 0, 0, 0, 0, '', NULL, NULL, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 1543383718, 1543383718)";
-        
+
                                 db.query(insertCourseFormatQuery, function (err, result) {
                                     db.query(enrollUserQuery, function (err, result) {
                                         res.send(err || result);
                                     });
                                 });
                             }
-                        }); 
+                        });
                     }
                 });
             } else {
                 return res.status(400).send({
-                    message: 'This is course is already exist.'
+                    message: 'This course is already exist.'
                 });
             }
         });
