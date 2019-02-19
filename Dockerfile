@@ -11,16 +11,16 @@ RUN bitnami-pkg unpack libphp-7.1.26-2 --checksum 432d5083f0ab5559aa417caeae4de3
 # RUN mkdir -p /tmp/moodle/moodle-linux-amd64-debian-9
 COPY ./bitnami/build /tmp/moodle/
 COPY . /tmp/moodle/files/moodle/
-RUN ls -la /tmp/moodle/
+# RUN ls -la /tmp/moodle/
 RUN cd /tmp/moodle/ && tar -czf ../../moodle-3.6.2-1-linux-amd64-debian-9.tar.gz . && cd ../../
 RUN tar -tvf moodle-3.6.2-1-linux-amd64-debian-9.tar.gz
 RUN mkdir -p /tmp/bitnami/pkg/install/moodle-3.6.2-1-linux-amd64-debian-9/
 RUN tar -C /tmp/bitnami/pkg/install/moodle-3.6.2-1-linux-amd64-debian-9/ -xzf moodle-3.6.2-1-linux-amd64-debian-9.tar.gz  
-RUN ls -la  /tmp/bitnami/pkg/install/moodle-3.6.2-1-linux-amd64-debian-9/
+# RUN ls -la  /tmp/bitnami/pkg/install/moodle-3.6.2-1-linux-amd64-debian-9/
 # RUN ls -la 
 RUN mkdir -p /tmp/bitnami/pkg/cache
 RUN mv moodle-3.6.2-1-linux-amd64-debian-9.tar.gz /tmp/bitnami/pkg/cache/
-RUN ls -la /tmp/bitnami/pkg/cache/
+# RUN ls -la /tmp/bitnami/pkg/cache/
 RUN bitnami-pkg unpack moodle-3.6.2-1
 
 
