@@ -1,0 +1,128 @@
+{
+    "id": "com.bitnami.moodle",
+    "name": "moodle",
+    "extends": ["Component"],
+    "revision": "1",
+    "author":     {
+        "name": "Bitnami",
+        "url": "https://bitnami.com"
+    },
+    "version": "3.6.2",
+    "expects":     [
+        "com.bitnami.mysql-client",
+        "com.bitnami.apache",
+        "com.bitnami.php"
+    ],
+    "properties":     {
+        "username":         {
+            "description": "User of the application",
+            "default": "user",
+            "required": true
+        },
+        "password":         {
+            "description": "Application password",
+            "default": "bitnami",
+            "type": "password",
+            "required": true
+        },
+        "email":         {
+            "description": "Admin email",
+            "default": "user@example.com"
+        },
+        "defaultDataLanguage":         {
+            "description": "Moodle default data language",
+            "type": "choice",
+            "default": "en",
+            "validValues": ["en"]
+        },
+        "language":         {
+            "description": "Installation language",
+            "type": "choice",
+            "validValues":             [
+                "en",
+                "es",
+                "zh"
+            ],
+            "default": "en"
+        },
+        "nonRootSystemUser":         {
+            "description": "System user for Moodle files",
+            "value": "bitnami"
+        },
+        "databaseServerHost":         {
+            "description": "Database Server Host",
+            "default": "127.0.0.1"
+        },
+        "databaseServerPort":         {
+            "description": "Database Server Port",
+            "default": 3306
+        },
+        "databaseName":         {
+            "description": "Name of the database the application will connect to",
+            "default": "bitnami_moodle"
+        },
+        "databaseUser":         {
+            "description": "Name of the database user that the application will connect with",
+            "default": "bn_moodle"
+        },
+        "databasePassword":         {
+            "description": "Password for the database user",
+            "default": ""
+        },
+        "smtpHost":         {
+            "description": "SMTP Host",
+            "default": ""
+        },
+        "smtpPort":         {
+            "description": "SMTP Port",
+            "default": ""
+        },
+        "smtpUser":         {
+            "description": "SMTP user",
+            "default": ""
+        },
+        "smtpPassword":         {
+            "description": "Database Admin Password",
+            "type": "password"
+        },
+        "smtpProtocol":         {
+            "description": "SMTP Protocol",
+            "default": "",
+            "type": "choice",
+            "validValues":             [
+                "ssl",
+                "tls",
+                ""
+            ]
+        },
+        "dataToPersist": {"value": ["{{$app.installdir}}"]},
+        "moodleSiteName":         {
+            "description": "Moodle site name",
+            "default": "New Site"
+        },
+        "persistDir":         {
+            "description": "Directory to backup application folders",
+            "value": "/bitnami/moodle"
+        },
+        "cronFile":         {
+            "description": "Cron file",
+            "value": "conf/cron"
+        },
+        "moodleDataDir":         {
+            "description": "Directory where moodledata is stored",
+            "default": "/bitnami/moodle/moodledata"
+        }
+    },
+    "installation":     {
+        "prefix": "moodle",
+        "packaging": {"components": [        {
+            "name": "moodle",
+            "owner": "root",
+            "folders": [            {
+                "name": "moodleapp",
+                "destination": "{{$app.installdir}}/",
+                "files": [{"origin": ["files/moodle/*"]}]
+            }]
+        }]}
+    }
+}
