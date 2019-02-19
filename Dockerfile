@@ -7,7 +7,23 @@ RUN bitnami-pkg unpack apache-2.4.38-1 --checksum 05c93df10a6e9fc17ee5f810045d80
 RUN bitnami-pkg unpack php-7.1.26-4 --checksum f754253881b698526840265dcbed1e77ef170fd74aa89c4bf2c5b1c8477061c9
 RUN bitnami-pkg unpack mysql-client-10.2.22-0 --checksum 6ad851ee27c7cb10ed003d249c8094a85462ae90ef8b4145a3480c29fdfb31a9
 RUN bitnami-pkg unpack libphp-7.1.26-2 --checksum 432d5083f0ab5559aa417caeae4de3e69c26516cce4b5d096fc2e3c442c48af7
-RUN bitnami-pkg unpack moodle-3.6.2-1 --checksum 1d0a19bb695ca1cd00baa0ec38da11e4a961df3c8431915e1aaadc5a830f2005
+
+# RUN mkdir -p /tmp/moodle/moodle-linux-amd64-debian-9
+COPY ./bitnami/build /tmp/moodle/
+COPY . /tmp/moodle/files/moodle/
+RUN ls -la /tmp/moodle/
+RUN cd /tmp/moodle/ && tar -czf ../../moodle-3.6.2-1-linux-amd64-debian-9.tar.gz . && cd ../../
+RUN tar -tvf moodle-3.6.2-1-linux-amd64-debian-9.tar.gz
+RUN mkdir -p /tmp/bitnami/pkg/install/moodle-3.6.2-1-linux-amd64-debian-9/
+RUN tar -C /tmp/bitnami/pkg/install/moodle-3.6.2-1-linux-amd64-debian-9/ -xzf moodle-3.6.2-1-linux-amd64-debian-9.tar.gz  
+RUN ls -la  /tmp/bitnami/pkg/install/moodle-3.6.2-1-linux-amd64-debian-9/
+# RUN ls -la 
+RUN mkdir -p /tmp/bitnami/pkg/cache
+RUN mv moodle-3.6.2-1-linux-amd64-debian-9.tar.gz /tmp/bitnami/pkg/cache/
+RUN ls -la /tmp/bitnami/pkg/cache/
+RUN bitnami-pkg unpack moodle-3.6.2-1
+
+
 RUN mkdir -p /opt/bitnami/apache/tmp && chmod g+rwX /opt/bitnami/apache/tmp
 RUN sed -i -e '/pam_loginuid.so/ s/^#*/#/' /etc/pam.d/cron
 RUN ln -sf /dev/stdout /opt/bitnami/apache/logs/access_log
