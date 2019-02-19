@@ -9,7 +9,6 @@ services:
     volumes:
       - 'mariadb_data:/bitnami'
       - './bitnami:/bitnami/backup'
-
   moodle:
     image: 'moodle'
     build: '.'
@@ -26,12 +25,11 @@ services:
       - '443:443'
     volumes:
       - 'moodle_data:/bitnami'
+      - './moodledata:/moodledata'
     depends_on:
       - mariadb
 volumes:
   mariadb_data:
     driver: local
   moodle_data:
-    driver: local
-  backup:
     driver: local
