@@ -1823,6 +1823,18 @@ class moodle_page {
         if (defined('BEHAT_SITE_RUNNING')) {
             $this->add_body_class('behat-site');
         }
+
+        $admins = get_admins();
+        $isadmin = false;
+        foreach ($admins as $admin) {
+            if ($USER->id == $admin->id) {
+                $isadmin = true;
+                break;
+            }
+        }
+        if (!$isadmin) {
+            $this->add_body_class('general-user-custom-css');
+        }
     }
 
     /**
