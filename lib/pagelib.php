@@ -1824,6 +1824,7 @@ class moodle_page {
             $this->add_body_class('behat-site');
         }
 
+        // Start Wellnezz.life
         $admins = get_admins();
         $isadmin = false;
         foreach ($admins as $admin) {
@@ -1835,6 +1836,7 @@ class moodle_page {
         if (!$isadmin) {
             $this->add_body_class('general-user-custom-css');
         }
+        // End Wellnezz.life
     }
 
     /**

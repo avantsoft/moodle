@@ -59,11 +59,17 @@ class renderer extends \plugin_renderer_base {
      */
     public function render_category(category $category) {
         $classes = $category->classes;
+        
+        // Start Wellnezz.life
+        $titleAsCss = strtolower(preg_replace('/\s+/', '', $category->title));
+
         if (empty($classes)) {
-            $return = \html_writer::start_tag('section', array('class' => 'node_category'));
+            $return = \html_writer::start_tag('section', array('class' => 'node_category ' . $titleAsCss));
         } else {
-            $return = \html_writer::start_tag('section', array('class' => 'node_category ' . $classes));
+            $return = \html_writer::start_tag('section', array('class' => 'node_category ' . $classes . ' ' . $titleAsCss));
         }
+        // End Wellnezz.life
+
         $return .= \html_writer::tag('h3', $category->title);
         $nodes = $category->nodes;
         if (empty($nodes)) {
