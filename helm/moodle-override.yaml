@@ -1,0 +1,25 @@
+image:
+  registry: avantsoftdocker-on.azurecr.io
+  repository: moodle
+  tag: latest
+  # v1 repository: avantsoft/moodle
+  # v1 tag: 1.0.0
+  ## Specify a imagePullPolicy
+  ## Defaults to 'Always' if image tag is 'latest', else set to 'IfNotPresent'
+  ## ref: http://kubernetes.io/docs/user-guide/images/#pre-pulling-images
+  ##
+  pullPolicy: Always
+  # v1 pullPolicy: IfNotPresent
+  ## Optionally specify an array of imagePullSecrets.
+  ## Secrets must be manually created in the namespace.
+  ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
+  ##
+  pullSecrets:
+    - acr-auth
+
+externalDatabase:
+  host: wz-prod-db1-mariadb.wz-prod.svc.cluster.local
+
+mariadb:
+  ## Whether to deploy a mariadb server to satisfy the applications database requirements. To use an external database set this to false and configure the externalDatabase parameters
+  enabled: false
