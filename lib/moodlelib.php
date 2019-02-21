@@ -6343,6 +6343,10 @@ function send_confirmation_email($user, $confirmationurl = null) {
     // Prevent problems with trailing dots not being included as part of link in some mail clients.
     $username = str_replace('.', '%2E', $username);
 
+   // replace moodle ref to wellnezz  to hide from users
+   // $confirmationpath = str_replace('moodle_mobile_app', 'wellnezz_mobile_app', $confirmationpath);
+   // $confirmationpath = str_replace('moodlemobile', 'wellnezzmobile',$confirmationpath);
+
     $data->link = $confirmationpath . ( $hasquerystring ? '&' : '?') . 'data='. $user->secret .'/'. $username;
 
     $message     = get_string('emailconfirmation', '', $data);

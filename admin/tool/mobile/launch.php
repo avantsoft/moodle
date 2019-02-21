@@ -41,6 +41,11 @@ if (!$CFG->enablewebservices) {
 
 // We have been requested to start a SSO process via OpenID.
 if (!empty($oauthsso) && is_enabled_auth('oauth2')) {
+   
+    // replace wellnezz again back to moodle in query string
+    // $serviceshortname = str_replace('wellnezz_mobile_app', 'moodle_mobile_app', $serviceshortname);
+    // $urlscheme = str_replace('wellnezzmobile', 'moodlemobile',$urlscheme);
+
     $wantsurl = new moodle_url('/admin/tool/mobile/launch.php',
         array('service' => $serviceshortname, 'passport' => $passport, 'urlscheme' => $urlscheme, 'confirmed' => $confirmed));
     $oauthurl = new moodle_url('/auth/oauth2/login.php',
