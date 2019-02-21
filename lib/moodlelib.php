@@ -6240,16 +6240,25 @@ function setnew_password_and_mail($user, $fasthash = false) {
     $a->firstname   = fullname($user, true);
     $a->sitename    = format_string($site->fullname);
     $a->username    = $user->username;
+    // START WELLNEZZ.LIFE
+    $a->email       = $user->email;
+    // END WELLNEZZ.LIFE
     $a->newpassword = $newpassword;
     $a->link        = $CFG->wwwroot .'/login/?lang='.$lang;
     $a->signoff     = generate_email_signoff();
 
     $message = (string)new lang_string('newusernewpasswordtext', '', $a, $lang);
 
-    $subject = format_string($site->fullname) .': '. (string)new lang_string('newusernewpasswordsubj', '', $a, $lang);
+    // START WELLNEZZ.LIFE
+    $messagehtml = text_to_html(get_string('newusernewpasswordtext', '', $a, $lang), false, false, true);
+
+    $user->mailformat = 1;  // Always send HTML version as well.
+
+    $subject = format_string($site->fullname) . ' App : '. (string)new lang_string('newusernewpasswordsubj', '', $a, $lang);
+    // END WELLNEZZ.LIFE
 
     // Directly email rather than using the messaging system to ensure its not routed to a popup or jabber.
-    return email_to_user($user, $supportuser, $subject, $message);
+    return email_to_user($user, $supportuser, $subject, $message, $messagehtml);
 
 }
 
