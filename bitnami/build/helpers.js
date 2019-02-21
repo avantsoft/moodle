@@ -83,6 +83,7 @@ $app.helpers.runMoodleInstall = function(databaseHandler) {
     `--fullname="${$app.moodleSiteName}"`,
     `--shortname="${$app.moodleSiteName}"`,
     '--non-interactive',
+    '--skip-database',
     '--allow-unstable',
     '--agree-license'];
   php.execute('admin/cli/install.php', installArgs, {cwd: $app.installdir});
