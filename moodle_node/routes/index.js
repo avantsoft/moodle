@@ -23,4 +23,8 @@ router.post('/wellnezz/proposedcourse', function(req, res) {
     return moodle.addProposedCourse(req, res);
 });
 
+router.post('/updateuser', function(req, res) {
+    return moodle.updateUser(req, res);
+});
+
 module.exports = router;

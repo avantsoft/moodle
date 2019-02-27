@@ -109,5 +109,46 @@ module.exports = {
                 });
             }
         });
+    },
+
+    updateUser: function (req, res) {
+        var data = req.body;
+        var firstname = data.firstname;
+        var lastname = data.lastname;
+        var city = data.city;
+        var country = data.country;
+        var phone1 = data.phone1;
+        var userid = data.userId;
+
+        if (!userid) {
+            return res.status(400).send({
+                message: 'User id is required.'
+            });
+        }
+        
+        var db = global.db;
+
+        var updateQuery = "UPDATE mdl_user SET ";
+        
+        if(firstname) {
+            updateQuery+= "firstname = '" + firstname + "'";
+        }
+        if(lastname) {
+            updateQuery+= ", lastname = '" + lastname + "'";
+        }
+        if(city) {
+            updateQuery+= ", city = '" + city + "'";
+        }
+        if(country) {
+            updateQuery+= ", country = '" + country + "'";
+        }
+        if(phone1) {
+            updateQuery+= ", phone1 = '" + phone1 + "'";
+        }
+        updateQuery+= " WHERE id = '" + userid + "'";
+
+        db.query(updateQuery, function (err, result) {
+            res.send(err ? err : data);
+        });
     }
 };
